@@ -5,18 +5,27 @@ import {
 }from '../controllers/populationController.js';
 
 const router = express.Router();
+
 /**
  * @swagger
- * paths:
  * /api/population:
- *      get:
- *          summary: "유동 인구 전체 조회"
- *          description: "데이터 베이스에서 json형태로 GET방식으로 데이터 요청"
- *          content:
- *              application/json:
- *                  schema:
- *                      type: object
+ *   get:
+ *     summary: 유동 인구 조회
+ *     responses:
+ *       200:
+ *         description: 성공
  */
 router.get('/',getFloatingPopulation);
+
+/**
+ * @swagger
+ * /api/population/u:
+ *   get:
+ *     summary: 유동 인구 관광특구만 조회
+ *     responses:
+ *       200:
+ *         description: 성공
+ */
 router.get('/u',getFloatingPopulation10000);
+
 export default router;
