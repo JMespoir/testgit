@@ -1,0 +1,42 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Agent Server",
+    "description": "Express 기반 Agentica API SERVER"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/api/population": {
+      "get": {
+        "summary": "유동 인구 조회",
+        "responses": {
+          "200": {
+            "description": "성공"
+          }
+        }
+      }
+    },
+    "/api/population/u": {
+      "get": {
+        "summary": "유동 인구 관광특구만 조회",
+        "responses": {
+          "200": {
+            "description": "성공"
+          }
+        }
+      }
+    },
+    "/api/population/a": {
+      "get": {
+        "summary": "test"
+      }
+    }
+  },
+  "components": {},
+  "tags": []
+}

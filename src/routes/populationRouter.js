@@ -1,7 +1,8 @@
 import express from 'express';
 import {
     getFloatingPopulation,
-    getFloatingPopulation10000
+    getFloatingPopulation10000,
+    abc
 }from '../controllers/populationController.js';
 
 const router = express.Router();
@@ -27,5 +28,13 @@ router.get('/',getFloatingPopulation);
  *         description: 성공
  */
 router.get('/u',getFloatingPopulation10000);
+
+/**
+ * @swagger
+ * /api/population/a:
+ *   get:
+ *     summary: test
+ */
+router.get('/a',abc)
 
 export default router;

@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon src/app.js",
+    "generate-swagger": "node generate-swagger.js"
   },
   "author": "JMEspoir",
   "license": "ISC",
