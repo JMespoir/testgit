@@ -1,8 +1,9 @@
 import pool from '../db.js';
 export const getFloatingPopulation = async(req,res,next)=>{
-    
+        const field = "total"
     try{
-        const [rows] = await pool.query('SELECT * FROM test');
+        const [rows] = await pool.query(`SELECT ${field} FROM test`);
+        
         res.status(200).json({data:rows});
     }catch(err){
         res.json(pool);
@@ -21,7 +22,8 @@ export const getFloatingPopulation10000 = async(req,res,next)=>{
 
 export const abc = async(req,res,next)=>{
     try{
-        console.log(1)
+        const [rows] = await pool.query('SELECT * FROM abc');
+        res.status(200).json({data:rows});
     }catch(err){
         next(err);
     }

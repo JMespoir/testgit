@@ -7,15 +7,14 @@ import pool from "./db.js";
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-console.dir(pool,{depth:null});
 dotenv.config();
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-
 app.use("/api.docs",swaggerUi.serve, swaggerUi.setup(specs));
-
 app.use('/api',router);
+
+
 
 
 app.listen(PORT,()=>{
