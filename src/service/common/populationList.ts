@@ -26,7 +26,7 @@ import {
     getSeoulStorePrice,
     getSeoulCommercialDistrict_commercial,
     getSeoulCommercialDistrict_hinterland,
-} from '../../domain/populationController.ts'
+} from '../../domain/domain.ts'
 import { getSanggwon_By_Region_commercial } from '../convenient_store/service.ts';
 
 //유리,보통,불리 판단 type
@@ -176,7 +176,7 @@ export async function calculateGrade(auto : string, admin : string, name : strin
     let ans : Grade = {
         float : "",
         company : "",
-        resident : ""
+        resident : "",
     }
 
     ans.float = await judgeByCondition(tmp.TOTAL_FLOATING_POP_PER_STORE)

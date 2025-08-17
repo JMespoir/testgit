@@ -1,5 +1,5 @@
 // testgit/src/utils/fetchSeoulApi.ts
-import fetch from "node-fetch";
+//import fetch from "node-fetch";
 
 /** 간단한 지수 백오프 재시도 유틸 */
 async function retry<T>(fn: () => Promise<T>, tries = 3, baseMs = 400): Promise<T> {
@@ -30,7 +30,7 @@ export async function fetchSeoulApi<T>(
 ): Promise<T[]> {
   const result: T[] = [];
   const step = options?.step ?? 1000;
-  const maxPages = options?.maxPages ?? 200;
+  const maxPages = options?.maxPages ?? 10;
   const extraParams = options?.extraParams ?? "";
   const delayMs = options?.delayMs ?? 0;
 
